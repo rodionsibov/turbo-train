@@ -27,7 +27,11 @@ export class TodoComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('onSubmit');
+    this.tasks.push({
+      description: this.todoForm.value.item,
+      done: false,
+    });
+    this.todoForm.reset();
   }
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -45,5 +49,10 @@ export class TodoComponent implements OnInit {
         event.currentIndex
       );
     }
+  }
+
+  deleteTask(id: number): void {
+    console.log(id);
+    
   }
 }

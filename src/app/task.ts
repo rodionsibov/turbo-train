@@ -1,4 +1,4 @@
 export interface Task {
   description: string;
-  done: string;
+  done: boolean;
 }
