@@ -14,11 +14,35 @@
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
               <mat-hint>Add task name</mat-hint>
             </mat-form-field>
-            <button mat-raised-button color="primary" [disabled]="todoForm.invalid">Add</button>
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="todoForm.invalid"
+            >
+              Add
+            </button>
           </form>
         </mat-card>
       </div>
     </div>
-    <div class="col-md-9"></div>
+    <div class="col-md-9">
+      <div cdkDropListGroup>
+        <div class="row">
+          <div class="example-container">
+            <h2>To do</h2>
+            <div
+              cdkDropList
+              [cdkDropListData]="tasks"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="example-box" *ngFor="let item of tasks" cdkDrag>
+                {{ item }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
