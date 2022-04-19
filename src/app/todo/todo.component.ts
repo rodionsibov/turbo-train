@@ -64,6 +64,7 @@ export class TodoComponent implements OnInit {
 
   onEdit(item: Task, i: number): void {
     this.todoForm.controls['item'].setValue(item.description);
+    this.todoForm.focus()
     this.updateIndex = i
     this.isEditEnabled = true
   }
