@@ -1,5 +1,7 @@
 # AngularTodo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57108f03-d0c1-46de-87dc-3378fdc9d3da/deploy-status)](https://app.netlify.com/sites/fanciful-crisp-ce8b95/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server
