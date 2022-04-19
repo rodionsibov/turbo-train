@@ -3,7 +3,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from '../task';
 
@@ -19,6 +19,7 @@ export class TodoComponent implements OnInit {
   done: Task[] = [];
   updateIndex: any;
   isEditEnabled: boolean = false;
+  @ViewChild('textInput') textInput!: ElementRef;
 
   constructor(private fb: FormBuilder) {}
 
@@ -64,9 +65,9 @@ export class TodoComponent implements OnInit {
 
   onEdit(item: Task, i: number): void {
     this.todoForm.controls['item'].setValue(item.description);
-    this.todoForm.focus()
     this.updateIndex = i
     this.isEditEnabled = true
+    this.textInput.nativeElement.focus();
   }
 
   deleteTask(i: number): void {
